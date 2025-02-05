@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 文档类型声明 -->
+    <meta charset="UTF-8">
+    <!-- 设置字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口，使页面适应不同设备的屏幕宽度 -->
+    <title>游戏美术作品集 | 董炳进</title>
+    <!-- 设置页面标题 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <!-- 引入Swiper库的CSS文件 -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- 引入自定义的主样式表 -->
+    <link rel="stylesheet" href="styles/animations.css">
+    <!-- 引入自定义的动画样式表 -->
+    <style>
+        /* 轮播大图容器样式 */
+        .banner-slider {
+            width: 100%;
+            height: 400px; /* 设置轮播大图的高度 */
+            overflow: hidden; /* 隐藏超出容器的部分 */
+        }
+
+        /* 轮播大图样式 */
+        .banner-slider .swiper-slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover; /* 确保图片覆盖整个容器 */
+            background-position: center; /* 图片居中显示 */
+        }
+
+        /* 作品容器样式 */
+        .swiper-slide {
+            width: 960px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 作品图片样式 */
+        .swiper-slide img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* 作品名称和描述样式 */
+        .swiper-slide h3,
+        .swiper-slide p {
+            text-align: center;
+        }
+
+        /* 作品展示区容器样式 */
+        .portfolio-grid {
+            position: relative; /* 设置为相对定位 */
+        }
+
+        /* 箭头样式 */
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute; /* 相对于作品展示区容器定位 */
+            top: 50%; /* 垂直居中 */
+            transform: translateY(-50%); /* 垂直居中 */
+            z-index: 10; /* 确保箭头在其他元素之上 */
+        }
+
+        .swiper-button-next {
+            right: 20px; /* 距离右侧20px */
+        }
+
+        .swiper-button-prev {
+            left: 20px; /* 距离左侧20px */
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo" data-text="YourPortfolio">董炳进个人作品集</div>
+            <ul class="nav-links">
+                <li class="active" data-filter="all">全部作品</li>
+                <li data-filter="vfx">特效设计</li>
+                <li data-filter="ui">界面设计</li>
+                <li data-filter="concept">概念原画</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 轮播大图 -->
+    <div class="swiper banner-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('assets/images/banner1.jpg')">
+                <div class="slide-content">
+                    <h2 class="slide-title">创造视觉奇迹</h2>
+                    <p class="slide-subtitle">次世代游戏美术解决方案</p>
+                </div>
+            </div>
+            <!-- 添加更多轮播项 -->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal" id="workModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" src="" alt="">
+            <h3 class="modal-title"></h3>
+            <p class="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- 作品展示区 -->
+    <section class="portfolio-grid">
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="vfx">特效</button>
+            <button class="filter-btn" data-filter="ui">界面</button>
+            <button class="filter-btn" data-filter="concept">原画</button>
+        </div>
+        
+        <div class="swiper portfolio-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-category="vfx">
+                    <img src="assets/images/work1.jpg" alt="作品1">
+                    <h3>作品1</h3>
+                    <p>这是一个特效设计作品。</p>
+                </div>
+                <div class="swiper-slide" data-category="ui">
+                    <img src="assets/images/work2.jpg" alt="作品2">
+                    <h3>作品2</h3>
+                    <p>这是一个界面设计作品。</p>
+                </div>
+                <div class="swiper-slide" data-category="concept">
+                    <img src="assets/images/work3.jpg" alt="作品3">
+                    <h3>作品3</h3>
+                    <p>这是一个概念原画作品。</p>
+                </div>
+                <!-- 添加更多作品项 -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <footer class="contact-section">
+        <div class="contact-container">
+            <h3>合作联系</h3>
+            <div class="contact-info">
+                <div class="avatar-container">
+                    <img src="assets/images/avatar.jpg" alt="董炳进" id="avatar">
+                </div>
+                <div class="name-container">
+                    <p class="name">董炳进</p>
+                    <p class="phone">电话联系方式：19533424080</p>
+                    <p class="wechat">微信：d568716561</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <!-- 更多社交链接 -->
+            </div>
+            <form class="encrypt-form">
+                <input type="email" placeholder="您的邮箱" required>
+                <textarea placeholder="留言内容（加密传输）" required></textarea>
+                <button type="submit">发送讯息</button>
+            </form>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intersection-observer/0.12.0/intersection-observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script>
+        // 定义作品数据
+        const works = [
+            { category: 'vfx', title: '特效作品1', image: 'assets/images/works/vfx/vfx1.jpg', description: '这是一个特效设计作品。' },
+            { category: 'vfx', title: '特效作品2', image: 'assets/images/works/vfx/vfx2.jpg', description: '这是一个特效设计作品。' },
+            { category: 'ui', title: '界面作品1', image: 'assets/images/works/ui/ui1.jpg', description: '这是一个界面设计作品。' },
+            { category: 'ui', title: '界面作品2', image: 'assets/images/works/ui/ui2.jpg', description: '这是一个界面设计作品。' },
+            { category: 'concept', title: '原画作品1', image: 'assets/images/works/concept/concept1.jpg', description: '这是一个概念原画作品。' },
+            { category: 'concept', title: '原画作品2', image: 'assets/images/works/concept/concept2.jpg', description: '这是一个概念原画作品。' },
+        ];
+
+        // 获取作品展示区容器
+        const portfolioContainer = document.getElementById('portfolioContainer');
+
+        // 渲染作品项
+        function renderWorks(category) {
+            // 清空容器
+            portfolioContainer.innerHTML = '';
+
+            // 过滤作品数据
+            const filteredWorks = category === 'all' ? works : works.filter(work => work.category === category);
+
+            // 生成作品项
+            filteredWorks.forEach(work => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+                slide.dataset.category = work.category;
+                slide.innerHTML = `
+                    <img src="${work.image}" alt="${work.title}">
+                    <h3>${work.title}</h3>
+                    <p>${work.description}</p>
+                `;
+                portfolioContainer.appendChild(slide);
+            });
+
+            // 初始化Swiper
+            const portfolioSwiper = new Swiper('.portfolio-slider', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        }
+
+        // 初始渲染所有作品
+        renderWorks('all');
+
+        // 点击过滤按钮
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 移除激活状态
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // 添加激活状态
+                btn.classList.add('active');
+                // 渲染对应分类的作品
+                renderWorks(btn.dataset.filter);
+            });
+        });
+    </script>
+</body>
+</html>
