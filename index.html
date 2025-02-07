@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人作品集</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-text">PORTFOLIO</span> <!-- 替换为文字 -->
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#home" class="active">首页</a>
+        </li>
+        <li class="dropdown">
+          <a href="#portfolio">作品集</a>
+          <ul class="dropdown-content">
+            <li><a href="#">原画</a></li>
+            <li><a href="#">特效</a></li>
+            <li><a href="#">动作</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#about">关于我</a>
+          <ul class="dropdown-content">
+            <li><a href="#">个人简介</a></li>
+            <li><a href="#">技能列表</a></li>
+            <li><a href="#">联系方式</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#contact">联系我</a>
+          <ul class="dropdown-content">
+            <li><a href="#">邮箱</a></li>
+            <li><a href="#">电话</a></li>
+            <li><a href="#">社交媒体</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="carousel">
+        <button class="carousel-control-prev" onclick="moveCarousel(-1)">
+          <span>‹</span>
+        </button>
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="assets/images/active/demo1.jpg" alt="轮播图 1">
+            <div class="carousel-caption">
+              <h3>轮播图标题 1</h3>
+              <p>这是第一个轮播图的描述。</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/active/demo2.jpg" alt="轮播图 2">
+            <div class="carousel-caption">
+              <h3>轮播图标题 2</h3>
+              <p>这是第二个轮播图的描述。</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/active/demo3.jpg" alt="轮播图 3">
+            <div class="carousel-caption">
+              <h3>轮播图标题 3</h3>
+              <p>这是第三个轮播图的描述。</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-next" onclick="moveCarousel(1)">
+          <span>›</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="portfolio-title">
+        <h2>作品集</h2>
+      </div>
+      <div class="portfolio-categories">
+        <button class="category-btn active" data-category="all">全部</button>
+        <button class="category-btn" data-category="原画">原画</button>
+        <button class="category-btn" data-category="特效">特效</button>
+        <button class="category-btn" data-category="动作">动作</button>
+        <button class="category-btn" data-category="游戏demo">游戏demo</button>
+      </div>
+      <div class="portfolio-items"></div>
+    </section>
+
+    <section id="about">
+      <div class="about-container">
+        <div class="about-title">
+          <h2>关于我</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="assets/images/about-me.jpg" alt="关于我">
+          </div>
+          <div class="about-details">
+            <p>你好，我是 [你的名字]，一名专注于游戏艺术的设计师。</p>
+            <p>我擅长 UI 原画、特效、动作和游戏 Demo 设计。在这里，你可以了解到我的设计理念和一些个人经历。</p>
+            <p>我热爱游戏，也热爱创作，希望我的作品能给你带来启发和灵感。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-container">
+        <h2>联系我</h2>
+        <form id="contact-form" action="/submit-contact" method="POST">
+          <div class="form-group">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">消息：</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">发送消息</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 [你的名字]. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

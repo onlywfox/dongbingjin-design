@@ -1,0 +1,28 @@
+{
+  "portfolioItems": [
+    {
+      "title": "UI 原画设计",
+      "description": "一款现代风格的游戏 UI 原画",
+      "thumbnail": "assets/images/ui/ui1.jpg",
+      "type": "原画"
+    },
+    {
+      "title": "爆炸特效",
+      "description": "3D 爆炸特效的实现",
+      "thumbnail": "assets/images/effects/eff1.jpg",
+      "type": "特效"
+    },
+    {
+      "title": "角色动作",
+      "description": "游戏主角的动作捕捉与动画",
+      "thumbnail": "assets/images/animation/ani1.jpg",
+      "type": "动作"
+    },
+    {
+      "title": "游戏 Demo",
+      "description": "一款 2D 平台游戏 Demo",
+      "thumbnail": "assets/images/active/demo1.jpg",
+      "type": "游戏demo"
+    }
+  ]
+}
